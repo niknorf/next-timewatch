@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## Time Watch app
+
+Use `npm run dev` to start dev server
