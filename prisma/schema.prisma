@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ActivityType {
+  id         Int        @id @default(autoincrement())
+  name       String     @db.VarChar(255)
+  activities Activity[]
+
+  @@map(name: "activity_types")
+}
+
+model Activity {
+  id             Int          @id @default(autoincrement())
+  title          String       @db.VarChar(255)
+  activityType   ActivityType @relation(fields: [activityTypeId], references: [id])
+  activityTypeId Int
+  startedAt      DateTime     @default(now()) @map(name: "started_at")
+  endedAt        DateTime     @map(name: "ended_at")
+
+  @@map(name: "activities")
+}
