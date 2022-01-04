@@ -1,0 +1,29 @@
+.time {
+    display: flex;
+    flex-direction: column;
+    background: #404040;
+    /* margin-top: 40vh; */
+    margin-top: 20px; /* temporary */
+    border-radius: 25px;
+    max-width: 592px;
+    width: 100%;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.activityTitle {
+    padding: 20px 15px;
+    color: white;
+    font-weight: 600;
+}
+
+.timeSpentContainer {
+    padding: 20px 15px;
+    background: white;
+    border-radius: 25px;
+    border: 4px solid #404040;
+}
+
+.timeSpentTitle {
+    font-weight: 600;
+}
