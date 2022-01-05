@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { PrismaClient } from "@prisma/client";
 import Layout from "../components/layout";
+import Activity from "../components/Activity/Activity";
 
 export const getStaticProps = async () => {
   const prisma = new PrismaClient();
@@ -33,6 +34,7 @@ export default function Logs({ activities }) {
             </li>
           ))}
         </ul>
+        <Activity />
       </Layout>
     </>
   );

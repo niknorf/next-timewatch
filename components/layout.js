@@ -4,7 +4,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className="App">
-        <main>{children}</main>
+        <main className="Main">{children}</main>
         <Menu />
         <style jsx>{`
           .App {
@@ -15,6 +15,10 @@ export default function Layout({ children }) {
             flex-direction: column;
             align-items: center;
             padding: 0 16px;
+          }
+          .Main {
+            max-width: 592px;
+            width: 100%;
           }
         `}</style>
       </div>

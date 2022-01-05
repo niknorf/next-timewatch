@@ -1,0 +1,13 @@
+.ToLogsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.toLogsButton {
+    text-decoration: none;
+    background: #3787FF;
+    color: white;
+    border-radius: 25px;
+    padding: 7px 14px;
+}

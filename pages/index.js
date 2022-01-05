@@ -4,6 +4,8 @@ import Layout from "../components/layout";
 import Time from "../components/Time/Time";
 import Categories from "../components/Categories/Categories";
 import Buttons from "../components/Buttons/Buttons";
+import Activity from "../components/Activity/Activity";
+import ToLogs from "../components/Buttons/ToLogs";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
         <Time />
         <Categories />
         <Buttons />
+        <Activity />
+        <ToLogs />
       </div>
     </Layout>
   );
