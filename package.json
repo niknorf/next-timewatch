@@ -12,6 +12,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.1",
     "@iconscout/react-unicons": "^1.1.6",
     "@prisma/client": "^3.7.0",
     "classnames": "^2.3.1",
