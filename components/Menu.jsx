@@ -26,7 +26,7 @@ const Menu = () => {
         "bg-white",
         "border-4",
         "border-white",
-        "rounded-45px",
+        "rounded-4xl",
         "drop-shadow",
         "fixed",
         "bottom-6",
@@ -46,7 +46,7 @@ const Menu = () => {
           {(isActive) => (
             <a
               className={classNames(["px-10", "py-4", "text-lg", "leading-6", "font-medium"], {
-                [classNames(["text-white", "bg-tw-orange", "rounded-45px"])]:
+                [classNames(["text-white", "bg-tw-orange", "rounded-4xl"])]:
                   isActive,
               })}
             >
@@ -58,7 +58,7 @@ const Menu = () => {
       <ActiveLink href="/settings">
         {(isActive) => (
           <a
-            className={classNames(["ml-auto", "px-9", "py-3", "rounded-45px", "ml-40"], {
+            className={classNames(["ml-auto", "px-9", "py-3", "rounded-4xl", "ml-40"], {
               "bg-tw-orange": isActive,
             })}
           >

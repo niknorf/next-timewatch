@@ -15,7 +15,7 @@ module.exports = {
         "tw-green": "#79ff57",
       },
       borderRadius: {
-        "45px": "2.8125rem",
+        "4xl": "2.8125rem",
       }
     },
   },
