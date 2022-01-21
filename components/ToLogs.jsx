@@ -10,7 +10,7 @@ const ToLogs = () => {
             "py-2",
             "px-4",
             "text-white",
-            "bg-blue-600",
+            "bg-blue-500",
             "rounded-3xl",
           ])}
         >

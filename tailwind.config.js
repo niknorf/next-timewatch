@@ -9,7 +9,15 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      colors: {
+        "tw-orange": "#ff603d",
+        "tw-green": "#79ff57",
+      },
+      borderRadius: {
+        "45px": "2.8125rem",
+      }
+    },
   },
   plugins: [],
 };

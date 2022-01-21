@@ -26,8 +26,10 @@ const Menu = () => {
         "bg-white",
         "border-4",
         "border-white",
-        "rounded-3xl",
+        "rounded-45px",
         "drop-shadow",
+        "fixed",
+        "bottom-6",
       ])}
     >
       {menuItemList.map((item) => (
@@ -43,8 +45,8 @@ const Menu = () => {
         >
           {(isActive) => (
             <a
-              className={classNames(["p-4", "text-lg", "font-medium"], {
-                [classNames(["text-white", "bg-orange-600", "rounded-3xl"])]:
+              className={classNames(["px-10", "py-4", "text-lg", "leading-6", "font-medium"], {
+                [classNames(["text-white", "bg-tw-orange", "rounded-45px"])]:
                   isActive,
               })}
             >
@@ -56,8 +58,8 @@ const Menu = () => {
       <ActiveLink href="/settings">
         {(isActive) => (
           <a
-            className={classNames(["ml-auto", "p-4", "rounded-3xl"], {
-              "bg-orange-600": isActive,
+            className={classNames(["ml-auto", "px-9", "py-3", "rounded-45px", "ml-40"], {
+              "bg-tw-orange": isActive,
             })}
           >
             <>

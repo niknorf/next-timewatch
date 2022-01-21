@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 const Activity = () => {
   return (
-    <div className={classNames(["flex", "bg-indigo-300", "rounded-3xl"])}>
+    <div className={classNames(["flex", "bg-indigo-200", "rounded-3xl"])}>
       <div
         className={classNames([
           "flex",
@@ -11,7 +11,7 @@ const Activity = () => {
           "bg-white",
           "border",
           "border-4",
-          "border-indigo-300",
+          "border-indigo-200",
           "rounded-3xl",
         ])}
       >

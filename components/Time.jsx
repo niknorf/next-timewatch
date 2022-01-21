@@ -2,8 +2,8 @@ import classNames from "classnames";
 
 const Time = () => {
   return (
-    <div className={classNames(["text-xl", "bg-gray-700", "rounded-3xl"])}>
-      <p className={classNames(["py-5", "px-4", "font-bold", "text-white"])}>
+    <div className={classNames(["text-xl", "bg-zinc-700", "rounded-3xl"])}>
+      <p className={classNames(["py-5", "px-4", "font-medium", "text-white"])}>
         Javascript course
       </p>
       <div

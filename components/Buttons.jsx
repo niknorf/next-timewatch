@@ -16,10 +16,10 @@ const Buttons = () => {
         href="#"
         className={classNames([
           "flex",
-          "p-4",
-          "bg-lime-400",
+          "p-5",
+          "bg-tw-green",
           "rounded-full",
-          "drop-shadow",
+          "drop-shadow-xl",
         ])}
       >
         <UilPlay size="48" className="fill-gray-700" />
@@ -30,9 +30,9 @@ const Buttons = () => {
           className={classNames([
             "flex",
             "p-4",
-            "bg-yellow-400",
+            "bg-yellow-300",
             "rounded-full",
-            "drop-shadow",
+            "drop-shadow-md",
           ])}
         >
           <UilPause size="35" className="fill-gray-700" />
@@ -42,9 +42,9 @@ const Buttons = () => {
           className={classNames([
             "flex",
             "p-4",
-            "bg-green-400",
+            "bg-tw-green",
             "rounded-full",
-            "drop-shadow",
+            "drop-shadow-md",
           ])}
         >
           <UilCheck size="35" className="fill-gray-700" />
