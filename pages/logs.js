@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { PrismaClient } from "@prisma/client";
-import Layout from "../components/layout";
-import Activity from "../components/Activity/Activity";
+import Layout from "../components/Layout";
+import Activity from "../components/Activity";
 
 export const getStaticProps = async () => {
   const prisma = new PrismaClient();
