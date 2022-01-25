@@ -1,6 +1,12 @@
+import type { VFC } from "react";
+import { ActivityType } from "@prisma/client";
 import classNames from "classnames";
 
-const Categories = ({ activityTypes }) => {
+interface Props {
+  activityTypes: ActivityType[];
+}
+
+const Categories: VFC<Props> = ({ activityTypes }) => {
   const className = classNames(["p-4", "rounded-3xl"]);
 
   const colorMap = [

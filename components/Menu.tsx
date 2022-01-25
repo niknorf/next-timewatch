@@ -1,3 +1,4 @@
+import { VFC } from "react";
 import classNames from "classnames";
 import { UilCog } from "@iconscout/react-unicons";
 import ActiveLink from "./ActiveLink";
@@ -17,7 +18,7 @@ const menuItemList = [
   },
 ];
 
-const Menu = () => {
+const Menu: VFC = () => {
   return (
     <div
       className={classNames([
@@ -33,21 +34,13 @@ const Menu = () => {
       ])}
     >
       {menuItemList.map((item) => (
-        <ActiveLink
-          key={item.href}
-          className="text-gray-600"
-          activeClassName={classNames([
-            "text-white",
-            "bg-orange-600",
-            "rounded-3xl",
-          ])}
-          href={item.href}
-        >
+        <ActiveLink key={item.href} href={item.href}>
           {(isActive) => (
             <a
               className={classNames(["px-10", "py-4", "text-lg", "leading-6", "font-medium"], {
                 [classNames(["text-white", "bg-tw-orange", "rounded-4xl"])]:
                   isActive,
+                "text-gray-600": !isActive,
               })}
             >
               {item.text}

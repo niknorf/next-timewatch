@@ -1,7 +1,8 @@
+import type { VFC } from "react";
 import classNames from "classnames";
 import { UilPlay, UilPause, UilCheck } from "@iconscout/react-unicons";
 
-const Buttons = () => {
+const Buttons: VFC = () => {
   return (
     <div
       className={classNames([
