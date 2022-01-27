@@ -1,7 +1,8 @@
+import type { NextPage } from "next";
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-export default function Settings() {
+const Settings: NextPage = () => {
   return (
     <>
       <Layout>
@@ -12,4 +13,6 @@ export default function Settings() {
       </Layout>
     </>
   );
-}
+};
+
+export default Settings;

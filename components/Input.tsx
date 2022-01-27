@@ -1,7 +1,8 @@
+import type { VFC } from "react";
 import classNames from "classnames";
 import { UilMicrophone } from "@iconscout/react-unicons";
 
-const Input = () => {
+const Input: VFC = () => {
   return (
     <div className="flex space-x-2">
       <input

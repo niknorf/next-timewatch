@@ -1,6 +1,7 @@
+import { VFC } from "react";
 import classNames from "classnames";
 
-const Time = () => {
+const Time: VFC = () => {
   return (
     <div className={classNames(["text-xl", "bg-zinc-700", "rounded-3xl"])}>
       <p className={classNames(["py-5", "px-4", "font-medium", "text-white"])}>

@@ -1,7 +1,8 @@
+import { VFC } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 
-const ToLogs = () => {
+const ToLogs: VFC = () => {
   return (
     <div className={classNames(["flex", "justify-center"])}>
       <Link href="/logs">
