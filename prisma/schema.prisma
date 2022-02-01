@@ -24,7 +24,7 @@ model Activity {
   activityType   ActivityType @relation(fields: [activityTypeId], references: [id])
   activityTypeId Int
   startedAt      DateTime     @default(now()) @map(name: "started_at")
-  endedAt        DateTime     @map(name: "ended_at")
+  endedAt        DateTime?    @map(name: "ended_at")
 
   @@map(name: "activities")
 }
