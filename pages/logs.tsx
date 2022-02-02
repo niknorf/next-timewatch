@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import ActivityItem from "../components/Activity";
 
 const fetchActivities = () =>
-  fetch("http://localhost:3000/api/activity").then((response) =>
+  fetch("http://localhost:3000/api/v1/activities").then((response) =>
     response.json()
   );
 
