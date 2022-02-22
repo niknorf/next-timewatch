@@ -1,6 +1,7 @@
 import type { VFC } from "react";
 import { Activity } from "@prisma/client";
 import classNames from "classnames";
+import { format } from "date-fns";
 
 interface Props {
   activity: Activity;
@@ -21,9 +22,9 @@ const Activity: VFC<Props> = ({ activity }) => {
           "rounded-3xl",
         ])}
       >
-        <span>{activity.startedAt}</span>
+        <span>{format(new Date(activity.startedAt), "HH:mm")}</span>
         <span className="font-bold">1h 15m</span>
-        <span>{activity.endedAt}</span>
+        <span>{format(new Date(activity.endedAt), "HH:mm")}</span>
       </div>
       <div className={classNames(["flex", "px-4", "items-center", "text-xl"])}>
         {activity.title}
