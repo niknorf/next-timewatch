@@ -21,6 +21,8 @@ const handler: NextApiHandler = async (request, response) => {
       const params = JSON.parse(request.body);
       const activity: Prisma.ActivityCreateInput = {
         title: params.title,
+        startedAt: params.startedAt,
+        endedAt: params.endedAt,
         activityType: {
           connect: {
             id: 1,
