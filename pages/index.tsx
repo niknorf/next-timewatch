@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { NextPage } from "next";
 import type { Activity, ActivityType } from "@prisma/client";
 import Head from "next/head";
@@ -10,12 +11,13 @@ import {
 } from "react-query";
 import { useForm } from "react-hook-form";
 import classNames from "classnames";
-import { UilPlay } from "@iconscout/react-unicons";
+import { UilPlay, UilCheck } from "@iconscout/react-unicons";
 import Input from "../components/Input";
 import Layout from "../components/Layout";
 import Buttons from "../components/Buttons";
 import ToLogs from "../components/ToLogs";
 import CircleButton from "../components/CircleButton";
+import Time from "../components/Time";
 
 const fetchActivityTypes = () =>
   fetch("http://localhost:3000/api/v1/activity-types").then((response) =>
@@ -30,6 +32,11 @@ const Home: NextPage = () => {
     fetchActivityTypes
   );
 
+  const [currentActivity, setCurrentActivity] = useState<{
+    title: string;
+    startTime: Date;
+  }>(null);
+
   const {
     register,
     handleSubmit,
@@ -39,13 +46,14 @@ const Home: NextPage = () => {
   const mutation = useMutation<
     Activity,
     void,
-    { title: string; endedAt: string }
+    { title: string; startedAt: string; endedAt: string }
   >(
     (activity) =>
       fetch("/api/v1/activities", {
         method: "POST",
         body: JSON.stringify({
           title: activity.title,
+          startedAt: activity.startedAt,
           endedAt: new Date().toISOString(),
         }),
       }).then((response) => response.json()),
@@ -56,9 +64,18 @@ const Home: NextPage = () => {
     }
   );
 
-  const onSubmit = (data: { activity: string }) => {
-    mutation.mutate({
+  const startActivity = (data: { activity: string }) => {
+    setCurrentActivity({
       title: data.activity,
+      startTime: new Date(),
+    });
+  };
+
+  const endActivity = () => {
+    console.log(currentActivity.startTime);
+    mutation.mutate({
+      title: currentActivity.title,
+      startedAt: currentActivity.startTime.toISOString(),
       endedAt: new Date().toISOString(),
     });
   };
@@ -68,26 +85,48 @@ const Home: NextPage = () => {
       <Head>
         <title>Time Watch - New</title>
       </Head>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="space-y-4">
-          <Input {...register("activity")} />
-          <Buttons />
-          <div
-            className={classNames([
-              "flex",
-              "flex-col",
-              "content-center",
-              "items-center",
-              "gap-2",
-            ])}
-          >
-            <CircleButton color="green" type="submit">
-              <UilPlay size="48" className="fill-gray-700" />
-            </CircleButton>
+      {!currentActivity ? (
+        <form onSubmit={handleSubmit(startActivity)}>
+          <div className="space-y-4">
+            <Input {...register("activity")} />
+            <div
+              className={classNames([
+                "flex",
+                "flex-col",
+                "content-center",
+                "items-center",
+                "gap-2",
+              ])}
+            >
+              <CircleButton color="green" type="submit">
+                <UilPlay size="48" className="fill-gray-700" />
+              </CircleButton>
+            </div>
           </div>
-          <ToLogs />
-        </div>
-      </form>
+        </form>
+      ) : (
+        <form onSubmit={handleSubmit(endActivity)}>
+          <div className="space-y-4">
+            <Time
+              title={currentActivity.title}
+              startedAt={currentActivity.startTime}
+            />
+            <div
+              className={classNames([
+                "flex",
+                "flex-col",
+                "content-center",
+                "items-center",
+                "gap-2",
+              ])}
+            >
+              <CircleButton color="green" type="submit">
+                <UilCheck size="48" className="fill-gray-700" />
+              </CircleButton>
+            </div>
+          </div>
+        </form>
+      )}
     </Layout>
   );
 };

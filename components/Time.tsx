@@ -1,11 +1,16 @@
 import { VFC } from "react";
 import classNames from "classnames";
 
-const Time: VFC = () => {
+interface Props {
+  title: string;
+  startedAt: Date;
+}
+
+const Time: VFC<Props> = ({ title, startedAt }) => {
   return (
     <div className={classNames(["text-xl", "bg-zinc-700", "rounded-3xl"])}>
       <p className={classNames(["py-5", "px-4", "font-medium", "text-white"])}>
-        Javascript course
+        {title}
       </p>
       <div
         className={classNames([
